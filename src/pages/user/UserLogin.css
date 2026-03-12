@@ -1,6 +1,6 @@
 :root {
   --primary: #2563EB;
-  --primary-hover: #db55ec;
+  --primary-hover: #b811ce;
   
   --background: #F8FAFC;
   --card: #FFFFFF;
@@ -11,81 +11,86 @@
   --border: #E2E8F0;
   
   --success: #22C55E;
-  --error: #EF4444;
+  --error: #fd4545;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-body {
-  margin: 0;
+.container {
   display: flex;
+}
+
+.login-image {
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.left-side {
+  flex: 1;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-  background-color: var(--primary);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.titulo {
-  background-color: #c3f021;
+.button-submit {
+  width: 15vw;
   padding: 10px;
   border-radius: 10px;
+  border: none;
+  background-color: var(--primary-hover);
+  cursor: pointer;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 20px;  
-  padding: 30px;
-  width: 350px;
-  background-color: var(--card);
+.right-side h1 {
+  margin-bottom: 50px;
 }
 
-.login-form form {
+.register{
+  margin-top: 20px;
+}
+
+.checkbox{
+  transform: translateY(15%);
+  margin-left: 5px;
+}
+
+.input-email, .input-password {
+  padding-right: 40px;
+  width: 15vw;
+  padding: 10px;
+  border-radius: 10px;
+  border: #7271717e 1px solid;
+  margin-bottom: 10px;
+}
+
+.input-email {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.password-input {
+  position: relative;
 }
 
 .hide-button {
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-
   border: none;
-  background: transparent;
   cursor: pointer;
+  transform: translateY(35%);
+  right: 10px;
+  background-color: #FFFFFF;
 }
 
-.input-form{
-    padding: 10px 15px 15px 10px;
-    margin: 5px;
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px 40px 10px 10px;
-}
-
-.password-input{
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-
-
-.button-submit {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.button-submit:hover {
-  cursor: pointer;
-  background-color: var(--primary-hover);
+.error {
+  color: var(--error);
 }
