@@ -1,0 +1,91 @@
+:root {
+  --primary: #2563EB;
+  --primary-hover: #db55ec;
+  
+  --background: #F8FAFC;
+  --card: #FFFFFF;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  
+  --border: #E2E8F0;
+  
+  --success: #22C55E;
+  --error: #EF4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo {
+  background-color: #c3f021;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;  
+  padding: 30px;
+  width: 350px;
+  background-color: var(--card);
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hide-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.input-form{
+    padding: 10px 15px 15px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+}
+
+.password-input{
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+
+.button-submit {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.button-submit:hover {
+  cursor: pointer;
+  background-color: var(--primary-hover);
+}

@@ -1,0 +1,50 @@
+.register-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px;
+    width: 450px;
+}
+
+input {
+    padding: 10px;
+    background-color: #beb0b0;
+}
+
+input:hover {
+    background-color: #93e2ce;
+}
+
+.letreiro{
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    color: red;
+}
+
+.hide-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+}
