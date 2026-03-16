@@ -1,0 +1,31 @@
+.bank-profile {
+    flex: 1;
+    height: 40vh;
+}
+
+.user-info {
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 7vw;
+    height: 10vh;
+}
+
+.bank-options {
+    flex: 1;
+    background-color: rgb(28, 10, 80);
+    width: 100vw;
+    height: 100vh;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bank-functions{
+    color: #FFFFFF;
+}
