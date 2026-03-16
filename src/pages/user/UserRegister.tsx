@@ -21,8 +21,10 @@ function UserRegister() {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
+        const rememberMe: Boolean = false;
+
         try {
-            if(errorMessage === "Password don't match.") return;
+            if (errorMessage === "Password don't match.") return;
 
             await api.post("/user/register", {
                 fullName,
@@ -30,8 +32,14 @@ function UserRegister() {
                 email,
                 password,
                 typeUser
-            })
-            navigate("/");
+            });
+
+            await api.post("/auth/login", {
+                email,
+                password,
+                rememberMe
+            });
+            navigate("/registerBankAccount");
         } catch (error: any) {
             setErrorMessage(error.response.data.message);
             console.log(error.response.data.message);
@@ -51,7 +59,7 @@ function UserRegister() {
         <>
             <div className="container">
                 <div className="right-side">
-                    <h1>Registre-se</h1>
+                    <h1 className="titulo">Registre-se</h1>
                     <form className="register-form" onSubmit={handleSubmit}>
                         <label>Nome Completo:</label>
                         <input type="text" onChange={e => setFullName(e.target.value)} />

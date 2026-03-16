@@ -1,0 +1,30 @@
+.bankAccountImage {
+    width: 50vw;
+    height: 100vh;
+}
+
+.register-bank {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+.register-bank button,
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.register-bank button {
+    border: none;
+    background-color: var(--primary-hover);
+    width: 15vw;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.register-bank input {
+    border: #7271717e 1px solid;
+    border-radius: 10px;
+}
