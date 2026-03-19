@@ -1,0 +1,5 @@
+.deposit-form {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF
+}
