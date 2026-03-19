@@ -12,7 +12,7 @@ function UserRegister() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordCheck, setPasswordCheck] = useState("");
-    const [typeUser, setTypeUser] = useState("user");
+    const [userType, setUserType] = useState("user");
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -31,7 +31,7 @@ function UserRegister() {
                 cpfCnpj,
                 email,
                 password,
-                typeUser
+                userType
             });
 
             await api.post("/auth/login", {
@@ -83,7 +83,7 @@ function UserRegister() {
                         <input autoComplete="new-password" type={showPassword ? "text" : "password"} onChange={e => setPasswordCheck(e.target.value)} />
 
                         <label>Tipo de Usuário:</label>
-                        <select onChange={e => setTypeUser(String(e.target.value))}>
+                        <select onChange={e => setUserType(String(e.target.value))}>
                             <option value="user">Usuário Comum</option>
                             <option value="shopkeeper">Usuário Lojista</option>
                         </select>

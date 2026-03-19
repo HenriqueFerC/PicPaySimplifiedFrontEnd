@@ -1,0 +1,22 @@
+.list li {
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    list-style: none;
+    margin-top: 30px;
+    padding: 15px;
+    width: 25vw;
+    font-weight: bold;
+}
+
+.transfer-title{
+    color: #FFFFFF;
+}
+
+
+.transfer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

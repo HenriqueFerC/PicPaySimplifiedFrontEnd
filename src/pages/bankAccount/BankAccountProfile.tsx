@@ -3,7 +3,6 @@ import api from '../../services/api'
 import '../bankAccount/BankAccountProfile.css'
 import logo from '../../assets/logo.png'
 import { Link } from "react-router-dom";
-import Transaction from "../transactions/Transaction";
 
 function BankAccountProfile() {
 
@@ -48,9 +47,9 @@ function BankAccountProfile() {
                 </div>
                 <div className="bank-options">
                     <div className="buttons">
-                        <Link className="bank-functions" to="/myBankAccount/transaction">Transação Oficial</Link>
-                        <Link to="/myBankAccount/transaction">Transação</Link>
-                        <Link to="/myBankAccount/transaction">Transação</Link>
+                        <Link className="bank-functions" to="/myBankAccount/transaction">Realizar Transação</Link>
+                        <Link className="bank-functions" to="/myBankAccount/deposit">Depositar</Link>
+                        <Link className="bank-functions" to="/myBankAccount/withdraw">Sacar</Link>
                     </div>
                 </div>
             </div>

@@ -21,11 +21,18 @@
     height: 100vh;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-around;
 }
 
-.bank-functions{
-    color: #FFFFFF;
+.bank-functions {
+    background-color: #28a9b3;
+    color: #000000;
+    border: 1px solid #28a9b3;
+    padding: 80px;
+    margin-top: 80px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
 }
