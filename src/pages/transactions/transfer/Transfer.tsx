@@ -1,9 +1,8 @@
 import type { FormEvent } from "react";
-import api from "../../services/api"
+import api from "../../../services/api"
 import { useState } from "react";
-import "./Transaction.css"
 import { useNavigate } from "react-router-dom";
-import bank from "../../assets/bank.png"
+import { Link } from "react-router-dom";
 
 function Transaction() {
 
@@ -43,7 +42,7 @@ function Transaction() {
             const response = await api.post("/transaction", {
                 value,
                 idPayee,
-                transfer:"transfer"
+                transactionType: "transfer"
             })
             const id = response.data.id;
             navigate("/myBankAccount/transactionDetails", {
@@ -60,27 +59,26 @@ function Transaction() {
 
     return (
         <>
-            <div className="container">
-                <div className="left-side">
-                    <div className="form">
-                        <h1 className="title">Transferência</h1>
-                        <form className="transaction-form" onSubmit={handleSubmit}>
-                            <label>Chave do Destinatário</label>
-                            <select onChange={e => setKey(e.target.value)}>
-                                <option disabled selected>Selecione</option>
-                                <option value="cpfCnpj">CPF/CNPJ</option>
-                                <option value="email">E-mail</option>
-                            </select>
-                            <input placeholder={key && `Insira o ${key}`} onChange={e => setKeyValue(e.target.value)}></input>
-                            <label>Valor:</label>
-                            <input placeholder="Insira o valor" onChange={e => setValue(Number(e.target.value))}></input>
-                            <button type="submit">Enviar</button>
-                            {errorMessage && <p>{errorMessage}</p>}
-                        </form>
-                    </div>
+            <div className="flex">
+                <div className="flex-1 flex flex-col justify-center items-center gap-10 bg-gray-100">
+                    <h1 className="font-bold text-3xl">Transferência</h1>
+                    <form className="flex flex-col gap-1" onSubmit={handleSubmit}>
+                        <label className="text-[1.1rem]">Chave do Destinatário</label>
+                        <select className="border p-2 bg-white w-80" onChange={e => setKey(e.target.value)}>
+                            <option disabled selected>Selecione</option>
+                            <option value="cpfCnpj">CPF/CNPJ</option>
+                            <option value="email">E-mail</option>
+                        </select>
+                        <input className="border p-1.5 rounded-sm bg-white w-80" placeholder={key && `Insira o ${key}`} onChange={e => setKeyValue(e.target.value)}></input>
+                        <label className="text-[1.1rem]">Valor:</label>
+                        <input className="border rounded-sm p-1.5 bg-white" placeholder="Insira o valor" onChange={e => setValue(Number(e.target.value))}></input>
+                        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+                        <button className="border bg-purple-700 hover:bg-purple-800 p-1.5 rounded-sm cursor-pointer mt-3" type="submit">Enviar</button>
+                    </form>
+                    <Link className="border rounded-sm p-1.5 bg-blue-300 hover:bg-blue-400" to={"/myBankAccount"}>Retornar</Link>
+
                 </div>
-                <div className="right-side">
-                    <img src={bank} className="bankAccountImage"></img>
+                <div className="flex-1 bg-[linear-gradient(rgba(0,0,0,0.3)),url('/assets/bank.png')] bg-cover h-screen w-full shadow-[1rem_0_3rem_rgba(0,0,0,0.3)]">
                 </div>
             </div>
         </>

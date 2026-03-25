@@ -1,6 +1,4 @@
 import { useState, type FormEvent } from "react";
-import bank from "../../assets/bank.png"
-import "./RegisterBankAccount.css"
 import api from "../../services/api"
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +44,7 @@ function RegisterBankACcount() {
                     </form>
                 </div>
                 <div className="left-side">
-                    <img src={bank} className="bankAccountImage"></img>
+                    <img  className="bankAccountImage"></img>
                 </div>
             </div>
         </>
